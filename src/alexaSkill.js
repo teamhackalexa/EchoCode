@@ -9,11 +9,11 @@
 */
 
 'use strict';
-function AlexaSkill(appId) {
+function alexaSkill(appId) {
     this._appId = appId;
 }
 
-AlexaSkill.prototype.requestHandlers = {
+alexaSkill.prototype.requestHandlers = {
     LaunchRequest: function (event, context, response) {
         this.eventHandlers.onLaunch.call(this, event.request, event.session, response);
     },
@@ -31,7 +31,7 @@ AlexaSkill.prototype.requestHandlers = {
 /**
  * Override any of the eventHandlers as needed
  */
-AlexaSkill.prototype.eventHandlers = {
+alexaSkill.prototype.eventHandlers = {
     /**
      * Called when the session starts.
      * Subclasses could have overriden this function to open any necessary resources.
@@ -73,9 +73,9 @@ AlexaSkill.prototype.eventHandlers = {
 /**
  * Subclasses should override the intentHandlers with the functions to handle specific intents.
  */
-AlexaSkill.prototype.intentHandlers = {};
+alexaSkill.prototype.intentHandlers = {};
 
-AlexaSkill.prototype.execute = function (event, context) {
+alexaSkill.prototype.execute = function (event, context) {
     try {
         console.log("session applicationId: " + event.session.application.applicationId);
 
@@ -180,4 +180,4 @@ Response.prototype = (function () {
     };
 })();
 
-module.exports = AlexaSkill;
+module.exports = alexaSkill;
