@@ -63,11 +63,20 @@ EchoCodeCommit.prototype.eventHandlers.onSessionEnded = function (sessionEndedRe
 
 EchoCodeCommit.prototype.intentHandlers = {
     // register custom intent handlers
-    EchoCodeCommitIntent: function (intent, session, response) {
+    "EchoCodeCommitIntent": function (intent, session, response) {
         response.tellWithCard("Hello World!", "Greeter", "Hello World!");
     },
-    HelpIntent: function (intent, session, response) {
+    "AMAZON.HelpIntent": function (intent, session, response) {
         response.ask("You can say hello to me!", "You can say hello to me!");
+    }
+    "AMAZON.StopIntent": function (intent, session, response) {
+        var speechOutput = "Goodbye";
+        response.tell(speechOutput);
+    },
+
+    "AMAZON.CancelIntent": function (intent, session, response) {
+        var speechOutput = "Goodbye";
+        response.tell(speechOutput);
     }
 };
 
