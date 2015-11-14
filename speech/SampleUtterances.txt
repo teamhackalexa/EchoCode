@@ -1,7 +1,7 @@
-HelloWorldIntent say hello
-HelloWorldIntent say hello world
-HelloWorldIntent hello
-HelloWorldIntent say hi
-HelloWorldIntent say hi world
-HelloWorldIntent hi
-HelloWorldIntent how are you
+EchoCodeCommitIntent say hello
+EchoCodeCommitIntent say hello world
+EchoCodeCommitIntent hello
+EchoCodeCommitIntent say hi
+EchoCodeCommitIntent say hi world
+EchoCodeCommitIntent hi
+EchoCodeCommitIntent how are you
