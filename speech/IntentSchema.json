@@ -1,7 +1,7 @@
 {
   "intents": [
     {
-      "intent": "HelloWorldIntent"
+      "intent": "EchoCodeCommitIntent"
     },
     {
       "intent": "AMAZON.HelpIntent"
