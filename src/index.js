@@ -29,41 +29,45 @@ var APP_ID = undefined; //replace with "amzn1.echo-sdk-ams.app.[your-unique-valu
 var AlexaSkill = require('./AlexaSkill');
 
 /**
- * EchoCodeCommit is a child of AlexaSkill.
+ * HelloWorld is a child of AlexaSkill.
  * To read more about inheritance in JavaScript, see the link below.
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript#Inheritance
  */
-var EchoCodeCommit = function () {
+var HelloWorld = function () {
     AlexaSkill.call(this, APP_ID);
 };
 
 // Extend AlexaSkill
-EchoCodeCommit.prototype = Object.create(AlexaSkill.prototype);
-EchoCodeCommit.prototype.constructor = EchoCodeCommit;
+HelloWorld.prototype = Object.create(AlexaSkill.prototype);
+HelloWorld.prototype.constructor = HelloWorld;
 
-EchoCodeCommit.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest, session) {
-    console.log("EchoCodeCommit onSessionStarted requestId: " + sessionStartedRequest.requestId
+HelloWorld.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest, session) {
+    console.log("HelloWorld onSessionStarted requestId: " + sessionStartedRequest.requestId
         + ", sessionId: " + session.sessionId);
     // any initialization logic goes here
 };
 
-EchoCodeCommit.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
-    console.log("EchoCodeCommit onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
+HelloWorld.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
+    console.log("HelloWorld onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
     var speechOutput = "Welcome to the Alexa Skills Kit, you can say hello";
     var repromptText = "You can say hello";
     response.ask(speechOutput, repromptText);
 };
 
-EchoCodeCommit.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, session) {
-    console.log("EchoCodeCommit onSessionEnded requestId: " + sessionEndedRequest.requestId
+HelloWorld.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, session) {
+    console.log("HelloWorld onSessionEnded requestId: " + sessionEndedRequest.requestId
         + ", sessionId: " + session.sessionId);
     // any cleanup logic goes here
 };
 
-EchoCodeCommit.prototype.intentHandlers = {
+HelloWorld.prototype.intentHandlers = {
     // register custom intent handlers
+<<<<<<< HEAD
     "EchoCodeCommitIntent": function (intent, session, response) {
+=======
+    HelloWorldIntent: function (intent, session, response) {
+>>>>>>> origin/master
         response.tellWithCard("Hello World!", "Greeter", "Hello World!");
     },
     "AMAZON.HelpIntent": function (intent, session, response) {
@@ -82,8 +86,8 @@ EchoCodeCommit.prototype.intentHandlers = {
 
 // Create the handler that responds to the Alexa Request.
 exports.handler = function (event, context) {
-    // Create an instance of the EchoCodeCommit skill.
-    var EchoCodeCommit = new EchoCodeCommit();
-    EchoCodeCommit.execute(event, context);
+    // Create an instance of the HelloWorld skill.
+    var helloWorld = new HelloWorld();
+    helloWorld.execute(event, context);
 };
 
