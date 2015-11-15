@@ -29,43 +29,123 @@ var APP_ID = undefined; //replace with "amzn1.echo-sdk-ams.app.[your-unique-valu
 var AlexaSkill = require('./AlexaSkill');
 
 /**
- * EchoCodeCommit is a child of AlexaSkill.
+ * HelloWorld is a child of AlexaSkill.
  * To read more about inheritance in JavaScript, see the link below.
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript#Inheritance
  */
-var EchoCodeCommit = function () {
+var HelloWorld = function () {
     AlexaSkill.call(this, APP_ID);
 };
 
 // Extend AlexaSkill
-EchoCodeCommit.prototype = Object.create(AlexaSkill.prototype);
-EchoCodeCommit.prototype.constructor = EchoCodeCommit;
+HelloWorld.prototype = Object.create(AlexaSkill.prototype);
+HelloWorld.prototype.constructor = HelloWorld;
 
-EchoCodeCommit.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest, session) {
-    console.log("EchoCodeCommit onSessionStarted requestId: " + sessionStartedRequest.requestId
+HelloWorld.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest, session) {
+    console.log("HelloWorld onSessionStarted requestId: " + sessionStartedRequest.requestId
         + ", sessionId: " + session.sessionId);
     // any initialization logic goes here
 };
 
-EchoCodeCommit.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
-    console.log("EchoCodeCommit onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
+HelloWorld.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
+    console.log("HelloWorld onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
     var speechOutput = "Welcome to the Alexa Skills Kit, you can say hello";
     var repromptText = "You can say hello";
     response.ask(speechOutput, repromptText);
 };
 
-EchoCodeCommit.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, session) {
-    console.log("EchoCodeCommit onSessionEnded requestId: " + sessionEndedRequest.requestId
+HelloWorld.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, session) {
+    console.log("HelloWorld onSessionEnded requestId: " + sessionEndedRequest.requestId
         + ", sessionId: " + session.sessionId);
     // any cleanup logic goes here
 };
 
-EchoCodeCommit.prototype.intentHandlers = {
+HelloWorld.prototype.intentHandlers = {
     // register custom intent handlers
+<<<<<<< HEAD
     "EchoCodeCommitIntent": function (intent, session, response) {
+=======
+    HelloWorldIntent: function (intent, session, response) {
+>>>>>>> origin/master
         response.tellWithCard("Hello World!", "Greeter", "Hello World!");
     },
+    "SetCurrentRepo": function (intent, session, response) {
+        handleSetCurrentRepo(session, response);
+    },
+    "ClearCurrentRepo": function (intent, session, response) {
+        handleClearCurrentRepo(session, response);
+    },
+    "ListRepos": function (intent, session, response) {
+        handleListRepos(session, response);
+    },
+    "ListBranches": function (intent, session, response) {
+        handleListBranches(session, response);
+    },
+    "GetRepoCreator": function (intent, session, response) {
+        handleGetRepoCreator(session, response);
+    },
+    "GetRepoCreation": function (intent, session, response) {
+        handleGetRepoCreation(session, response);
+    },
+    "GetRepoDefault": function (intent, session, response) {
+        handleGetRepoDefault(session, response);
+    },
+     "GetRepoLastMod": function (intent, session, response) {
+        handleGetRepoLastModt(session, response);
+    },
+     "GetRepoInfo": function (intent, session, response) {
+        handleGetRepoInfo(session, response);
+    },
+     "GetCurrentRepoName": function (intent, session, response) {
+        handleGetCurrentRepoName(session, response);
+    },
+     "GetCurrentRepoCreator": function (intent, session, response) {
+        handleGetCurrentRepoCreator(session, response);
+    },
+     "GetCurrentRepoCreation": function (intent, session, response) {
+        handleGetCurrentRepoCreation(session, response);
+    },
+     "GetCurrentRepoDefault": function (intent, session, response) {
+        handleGetCurrentRepoDefault(session, response);
+    },
+     "GetCurrentRepoLastMod": function (intent, session, response) {
+        handleGetCurrentRepoLastMod(session, response);
+    },
+    "GetCurrentRepoInfo": function (intent, session, response) {
+        handleGetCurrentRepoInfo(session, response);
+    },
+    "GetBranch": function (intent, session, response) {
+        handleGetBranch(session, response);
+    },
+    "MakeRepo": function (intent, session, response) {
+        handleMakeRepo(session, response);
+    },
+    "MakeBranch": function (intent, session, response) {
+        handleMakeBranch(session, response);
+    },
+    "DeleteRepo": function (intent, session, response) {
+        handleDeleteRepo(session, response);
+    },
+    "UpdateDefaultBranch": function (intent, session, response) {
+        handleUpdateDefaultBranch(session, response);
+    },
+    "UpdateCurrentDefaultBranch": function (intent, session, response) {
+        handleGetBranch(session, response);
+    },
+    "UpdateRepoName": function (intent, session, response) {
+        handleUpdateRepoName(session, response);
+    },
+     "UpdateCurrentRepoName": function (intent, session, response) {
+        handleUpdateCurrentRepoName(session, response);
+    },
+     "UpdateDescription": function (intent, session, response) {
+        handleUpdateDescription(session, response);
+    },
+     "UpdateCurrentDescription": function (intent, session, response) {
+        handleUpdateCurrentDescription(session, response);
+    },
+     
     "AMAZON.HelpIntent": function (intent, session, response) {
         response.ask("You can say hello to me!", "You can say hello to me!");
     }
@@ -82,8 +162,8 @@ EchoCodeCommit.prototype.intentHandlers = {
 
 // Create the handler that responds to the Alexa Request.
 exports.handler = function (event, context) {
-    // Create an instance of the EchoCodeCommit skill.
-    var EchoCodeCommit = new EchoCodeCommit();
-    EchoCodeCommit.execute(event, context);
+    // Create an instance of the HelloWorld skill.
+    var helloWorld = new HelloWorld();
+    helloWorld.execute(event, context);
 };
 
