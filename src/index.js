@@ -70,6 +70,85 @@ HelloWorld.prototype.intentHandlers = {
 >>>>>>> origin/master
         response.tellWithCard("Hello World!", "Greeter", "Hello World!");
     },
+    "SetCurrentRepo": function (intent, session, response) {
+        handleSetCurrentRepo(session, response);
+    },
+    "ClearCurrentRepo": function (intent, session, response) {
+        handleClearCurrentRepo(session, response);
+    },
+    "ListRepos": function (intent, session, response) {
+        handleListRepos(session, response);
+    },
+    "ListBranches": function (intent, session, response) {
+        handleListBranches(session, response);
+    },
+    "GetRepoCreator": function (intent, session, response) {
+        handleGetRepoCreator(session, response);
+    },
+    "GetRepoCreation": function (intent, session, response) {
+        handleGetRepoCreation(session, response);
+    },
+    "GetRepoDefault": function (intent, session, response) {
+        handleGetRepoDefault(session, response);
+    },
+     "GetRepoLastMod": function (intent, session, response) {
+        handleGetRepoLastModt(session, response);
+    },
+     "GetRepoInfo": function (intent, session, response) {
+        handleGetRepoInfo(session, response);
+    },
+     "GetCurrentRepoName": function (intent, session, response) {
+        handleGetCurrentRepoName(session, response);
+    },
+     "GetCurrentRepoCreator": function (intent, session, response) {
+        handleGetCurrentRepoCreator(session, response);
+    },
+    },
+     "GetCurrentRepoCreation": function (intent, session, response) {
+        handleGetCurrentRepoCreation(session, response);
+    },
+    },
+     "GetCurrentRepoDefault": function (intent, session, response) {
+        handleGetCurrentRepoDefault(session, response);
+    },
+    },
+     "GetCurrentRepoLastMod": function (intent, session, response) {
+        handleGetCurrentRepoLastMod(session, response);
+    },
+    "GetCurrentRepoInfo": function (intent, session, response) {
+        handleGetCurrentRepoInfo(session, response);
+    },
+    "GetBranch": function (intent, session, response) {
+        handleGetBranch(session, response);
+    },
+    "MakeRepo": function (intent, session, response) {
+        handleMakeRepo(session, response);
+    },
+    "MakeBranch": function (intent, session, response) {
+        handleMakeBranch(session, response);
+    },
+    "DeleteRepo": function (intent, session, response) {
+        handleDeleteRepo(session, response);
+    },
+    "UpdateDefaultBranch": function (intent, session, response) {
+        handleUpdateDefaultBranch(session, response);
+    },
+    "UpdateCurrentDefaultBranch": function (intent, session, response) {
+        handleGetBranch(session, response);
+    },
+    "UpdateRepoName": function (intent, session, response) {
+        handleUpdateRepoName(session, response);
+    },
+     "UpdateCurrentRepoName": function (intent, session, response) {
+        handleUpdateCurrentRepoName(session, response);
+    },
+     "UpdateDescription": function (intent, session, response) {
+        handleUpdateDescription(session, response);
+    },
+     "UpdateCurrentDescription": function (intent, session, response) {
+        handleUpdateCurrentDescription(session, response);
+    },
+     
     "AMAZON.HelpIntent": function (intent, session, response) {
         response.ask("You can say hello to me!", "You can say hello to me!");
     }
