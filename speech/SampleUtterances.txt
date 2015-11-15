@@ -1,109 +1,24 @@
-SetCurrentRepo Make {repo} my current repo
-SetCurrentRepo Switch to {repo}
-SetCurrentRepo Change to {repo}
-SetCurrentRepo Switch repo to {repo}
-SetCurrentRepo Change repo to {repo}
-SetCurrentRepo Change current repo to {repo}
+HelloWorldIntent say hello
+HelloWorldIntent say hello world
+HelloWorldIntent hello
+HelloWorldIntent say hi
+HelloWorldIntent say hi world
+HelloWorldIntent hi
+HelloWorldIntent how are you
 
-ClearCurrentRepo Clear current repo
-
-ListRepos What are my repositories
-ListRepos List repositories
-ListRepos List repos
-ListRepos List my repositories
-ListRepos List all of my repositories
-ListRepos Get repos
-ListRepos Get repositories
-ListRepos Get my repositories
-
-ListBranches What are the branches
-ListBranches What are the branches of this repository
-ListBranches List branches
-ListBranches List all branches
-ListBranches List current branches
-ListBranches List the branches of this repository
-ListBranches List all branches of this repo
-ListBranches List the branches of this repo
-
-GetRepo What is repo {repo}
-GetRepo Tell me about repo {repo}
-
-GetRepoCreator Who owns {repo}
-GetRepoCreator Who created {repo}
-
-GetRepoCreation When was {repo} created
-GetRepoCreation When was {repo} made
-GetRepoCreation What day was {repo} made
-GetRepoCreation Creation date {repo}
-GetRepoCreation Creation time {repo}
-
-GetRepoDefault What is the default branch of {repo}
-GetRepoDefault Default branch of {repo}
-
-GetRepoLastMod When was {repo} last modified
-GetRepoLastMod Last modification {repo}
-GetRepoLastMod Last edit {repo}
-
-GetCurrentRepoName What is my current repo
-GetCurrentRepoName What repo am I working in
-GetCurrentRepoName What is the name of this repo
-
-GetCurrentRepoCreator Who owns this repo
-GetCurrentRepoCreator Who created this repo
-
-GetCurrentRepoCreation When was this repo created
-GetCurrentRepoCreation When was this created
-
-GetCurrentRepoDefault What is the default branch of this repo
-GetCurrentRepoDefault What is the default branch
-
-GetCurrentRepoLastMod When was this repo last modified
-
-GetCurrentRepoInfo Tell me about this repo
-GetCurrentRepoInfo Give me information about this repo
-GetCurrentRepoInfo Give me information about this repo
-GetCurrentRepoInfo Tell me information about this repo
-
-GetBranch Is {branch} in {repo}
-GetBranch Is {branch} in this repo
-GetBranch Is {branch} in this repository
-
-MakeRepo Make a new repo named {repo}
-MakeRepo New repo named {repo}
-MakeRepo New project named {repo}
-MakeRepo Make a new project named {repo}
-MakeRepo Make a new repo called {repo}
-MakeRepo New repo called {repo}
-MakeRepo New project called {repo}
-MakeRepo Make a new project called {repo}
-
-MakeBranch New branch named {branch}
-MakeBranch New branch called {branch}
-MakeBranch Make a new branch named {branch}
-MakeBranch Make a new branch called {branch}
-MakeBranch New branch named {branch} at {commit}
-MakeBranch New branch called {branch} at {commit}
-MakeBranch Make a new branch named {branch} at {commit}
-MakeBranch Make a new branch called {branch} at {commit}
-
-DeleteRepo Delete repo {repo}
-DeleteRepo Erase repo {repo}
-DeleteRepo Nuke repo {repo}
-
-UpdateDefaultBranch Change default branch of {repo} to {branch}
-UpdateDefaultBranch Change the default branch of {repo} to {branch}
-
-UpdateCurrentDefaultBranch Change default branch to {branch}
-UpdateCurrentDefaultBranch Change the default branch to {branch}
-
-UpdateRepoName Change the name of repo {repo} to {newname}
-UpdateRepoName Change name of repo {repo} to {newname}
-
-UpdateCurrentRepoName Change the name of this repo to {newname}
-UpdateCurrentRepoName Change name of this repo to {newname}
-
-UpdateDescription Change the description of repo {repo} to {description}
-UpdateDescription Change description of repo {repo} to {description}
-
-UpdateCurrentDescription Change the description of this repo to {description}
-UpdateCurrentDescription Change description of this repo to {description}
+HelpIntent help
+HelpIntent help me
+HelpIntent what can I ask you
+HelpIntent get help
+HelpIntent to help
+HelpIntent to help me
+HelpIntent what commands can I ask
+HelpIntent what commands can I say
+HelpIntent what can I do
+HelpIntent what can I use this for
+HelpIntent what questions can I ask
+HelpIntent what can you do
+HelpIntent what do you do
+HelpIntent how do I use you
+HelpIntent how can I use you
+HelpIntent what can you tell me
