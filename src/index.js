@@ -1,6 +1,7 @@
 var github = require('octonode');
+var secrets = require('./secrets');
 
-var client = github.client('');
+var client = github.client(secrets.API_KEY);
 var ghme = client.me();
 var ghrepo = client.repo('teamhackalexa/EchoCode');
 
@@ -30,8 +31,8 @@ EchoCode.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequ
 
 EchoCode.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
     console.log("EchoCode onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
-    var speechOutput = "Welcome to Echo Code, ask about a repository";
-    var repromptText = "Ask about a repository";
+    var speechOutput = "Welcome to Echo Code, voice controlled access to the git hub API";
+    var repromptText = "Ask about a question";
     response.ask(speechOutput, repromptText);
 };
 
@@ -48,16 +49,33 @@ EchoCode.prototype.intentHandlers = {
         response.tell(output);
     },
 
-    RepoBranches: function (intent, session, response) {
+    BranchesIntent: function (intent, session, response) {
         function callback(err, body, header) {
-            var output = 'The branches in this repository are, ';
-            body.forEach(function(branch) {
-                output += branch['name'] + ', ';
-            });
+            var num = Object.keys(body).length
+            var output = 'There are ' + num + ' branches in this repository, they are, ';
+            for (var i in body) {
+                output += body[i]['name'] + ', ';
+                if (i == num-2 && num > 1) {
+                    output += 'and '
+                }
+            }
             response.tell(output);
         };
         ghrepo.branches(callback);
     },
+
+    LatestCommitIntent: function (intent, session, response) {
+       function callback(err, body, header) {
+           // console.log(JSON.stringify(body[body.length - 1]));
+           var output = 'The latest commit was made by '
+           output += JSON.stringify(body[body.length - 1]['commit']['committer']['name']);
+           output += ' with the message ';
+           output += JSON.stringify(body[body.length - 1]['commit']['message']);
+           // output += body[]
+           response.tell(output);
+       };
+       ghrepo.commits(callback);
+   },
 
     ExitIntent: function (intent, session, response) {
         response.exit("Goodbye");

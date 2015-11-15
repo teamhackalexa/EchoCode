@@ -1,11 +1,6 @@
-HelloWorldIntent say hello
-HelloWorldIntent say hello world
-HelloWorldIntent hello
-HelloWorldIntent say hi
-HelloWorldIntent say hi world
-HelloWorldIntent hi
-HelloWorldIntent how are you
+TestIntent repeat {blank|testslot}
 
+<<<<<<< Updated upstream
 RepoBrances List branches
 
 HelpIntent help
@@ -24,3 +19,18 @@ HelpIntent what do you do
 HelpIntent how do I use you
 HelpIntent how can I use you
 HelpIntent what can you tell me
+=======
+BranchesIntent List branches
+BranchesIntent List the branches
+
+LatestCommitIntent Latest commit
+LatestCommitIntent Get latest commit
+LatestCommitIntent Get the latest commit
+LatestCommitIntent What is the latest commit
+LatestCommitIntent What was the latest commit
+
+ExitIntent Exit
+ExitIntent Exit Echo Code
+ExitIntent Quit
+ExitIntent Quit Echo Code
+>>>>>>> Stashed changes

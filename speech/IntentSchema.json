@@ -1,15 +1,26 @@
 {
   "intents": [
     {
-      "intent": "HelloWorldIntent",
-      "slots": []
+      "intent": "TestIntent",
+      "slots": [
+        {
+          "name": "testslot",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
     },
     {
-      "intent": "RepoBranches"
+      "intent": "BranchesIntent",
+      "slots": []
     },
+	{
+      "intent": "LatestCommitIntent"
+	},
     {
       "intent": "HelpIntent",
-      "slots": []
+    },
+	{
+      "intent": "ExitIntent",
     }
   ]
 }
