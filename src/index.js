@@ -1,5 +1,9 @@
 var github = require('octonode');
 
+var client = github.client('');
+var ghme = client.me();
+var ghrepo = client.repo('teamhackalexa/EchoCode');
+
 /**
  * App ID for the skill
  */
@@ -43,6 +47,18 @@ EchoCode.prototype.intentHandlers = {
         var output = intent.slots.testslot.value
         response.tell(output);
     },
+
+    RepoBranches: function (intent, session, response) {
+        function callback(err, body, header) {
+            var output = 'The branches in this repository are, ';
+            body.forEach(function(branch) {
+                output += branch['name'] + ', ';
+            });
+            response.tell(output);
+        };
+        ghrepo.branches(callback);
+    },
+
     ExitIntent: function (intent, session, response) {
         response.exit("Goodbye");
     }
