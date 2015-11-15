@@ -69,6 +69,9 @@ HelloWorld.prototype.intentHandlers = {
     HelpIntent: function (intent, session, response) {
         response.ask("You can say hello to me!", "You can say hello to me!");
     }
+    TestIntent: function (intent, session, response) {
+        response.tellWithCard("test", "test", "test");
+    }
 };
 
 // Create the handler that responds to the Alexa Request.
