@@ -33,6 +33,24 @@
 	  "intent": "RepoContributorsIntent"
 	},
 	{
+      "intent": "CreateIssueIntentOneshot",
+      "slots": [
+        {
+          "name": "title",
+          "type": "AMAZON.LITERAL"
+        },
+        {
+          "name": "body",
+          "type": "AMAZON.LITERAL"
+        }]
+    },
+	{
+      "intent": "LastNotificationsIntent"
+    },
+	{
+	  "intent": "ThanksIntent"
+	},
+	{
       "intent": "ExitIntent"
     }
   ]

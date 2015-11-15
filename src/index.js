@@ -1,9 +1,13 @@
 var github = require('octonode');
 var secrets = require('./secrets');
+var alexaDateUtil = require('./alexaDateUtil');
 
 var client = github.client(secrets.API_KEY);
 var ghme = client.me();
 var ghrepo = client.repo('teamhackalexa/EchoCode');
+
+var username = 'teamhackalexa';
+var repository = 'EchoCode';
 
 /**
  * App ID for the skill
@@ -77,14 +81,17 @@ EchoCode.prototype.intentHandlers = {
        ghrepo.commits(callback);
    },
 
-   GetIssue: function(intent, session, response) {
+    GetIssue: function(intent, session, response) {
       var issueNumber = intent.slots.number.value;
-      var ghissue = client.issue('pksunkara/octonode', issueNumber);
+      console.log("GetIssueFunction Username: " + username);
+      console.log("GetIssueFunction Repo: " + repository);
+      ghissue = client.issue(username + '/' + repository, issueNumber);
       function callback(err, body, header){
         var output = "Issue number " + body["number"] + " titled " + body["title"] +
-                     "submitted by user " + body["user"]["login"] + " on " + Date(body["created_at"]) +
-                     " with body message " + body["body"] + ".";
+                     "submitted by user " + body["user"]["login"] + " on " + alexaDateUtil.getFormattedDate(new Date(body["created_at"])) +
+                     " with body message " + body["body"];
         response.tell(output);
+        
       };
       ghissue.info(callback);
     },
@@ -124,6 +131,76 @@ EchoCode.prototype.intentHandlers = {
             response.tell(output);
         };
         ghrepo.contributors(callback);
+    },
+
+    CreateIssueIntentOneshot: function(intent, session, response) {
+        var speechOutput, repromptText;
+        function callback(err, body, header) {
+            var output = "Issue number" + body["number"] + " titled " + body["title"];
+            output += " was successfully created.";
+            response.tell(output);
+        };
+        if(!intent.slots.title.value){
+            repromptText = "Please try again";
+            speechOutput = "You have not stated a valid title.";
+            response.ask(speechOutput, repromptText);
+            return;
+        }
+        if(!intent.slots.body.value){
+            ghrepo.issue({"title": intent.slots.title.value}, callback);
+        } else{
+            ghrepo.issue({
+                "title": intent.slots.title.value,
+                "body": intent.slots.body.value
+            }, callback);
+        }
+    },
+
+    LastNotificationsIntent: function(intent, session, response) {
+      function callback(err, body, header){
+        var output;
+        if(body.size == 0 || !body[0]){
+            output  = "You do not have any notifications.";
+            response.tell(output);
+        } else{
+            output = "Here's your latest notification. ";
+            output += body[0]['subject']['title'] + ' of type ' + body[0]['subject']['type'];
+            response.tell(output);
+        }
+      };
+      ghme.notifications({},callback);
+    },
+
+    ChangeRepository: function(intent, session, response) {
+      ghrepo = client.repo(username + '/' + repository);
+      console.log("Change Profile Username: " + username);
+      console.log("Change Repository name: " + repository);
+      function callback(err, body, header) {
+        var output = 'You have switched repositories.';
+        response.tell(output);
+      }
+      ghrepo.info(callback);
+    },
+    SetProfileUsername: function(intent, session, response) {
+      var profileUsername = intent.slots.profileUsername.value;
+      username = profileUsername.replace(/\s/g, '');
+      username = username.toLowerCase();
+      console.log("username: " + username);
+      var output = "The git hub profile has been set to " + username;
+      response.tell(output);
+    },
+    
+    SetRepositoryName: function(intent, session, response) {
+      var repositoryName = intent.slots.repoName.value;
+      repository = repositoryName.replace(/\s/g, '');
+      repository = repository.toLowerCase();
+      console.log("repository: " + repository);
+      var output = "The repository has been set to " + repository;
+      response.tell(output);
+    },
+
+    ThanksIntent: function(intent, session, response) {
+      response.tell("You're welcome");
     },
 
     ExitIntent: function (intent, session, response) {

@@ -2,6 +2,7 @@ TestIntent repeat {blank|testslot}
 
 BranchesIntent List branches
 BranchesIntent List the branches
+BranchesIntent What are the branches
 
 LatestCommitIntent Latest commit
 LatestCommitIntent Get latest commit
@@ -25,6 +26,7 @@ RepoLanguagesIntent What language is it
 RepoLanguagesIntent What are the languages
 RepoLanguagesIntent What language am I using
 RepoLanguagesIntent What languages am I using
+RepoLanguagesIntent What languages are used
 
 RepoContributorsIntent who is working on this
 RepoContributorsIntent who is working on this repository
@@ -35,6 +37,25 @@ RepoContributorsIntent who contributed to this repository
 RepoContributorsIntent who made this
 RepoContributorsIntent which hackers are the greatest ever
 
+CreateIssueIntentOneshot Make a new issue titled {title|title}
+CreateIssueIntentOneshot Make a new issue titled {this is a very super duper long title|title}
+CreateIssueIntentOneshot Make a new issue titled {title|title} with body {body|body}
+CreateIssueIntentOneshot Make a new issue titled {this is a very super duper long title|title} with body {body|body}
+CreateIssueIntentOneshot Make a new issue titled {title|title} with body {this is a super duper long body|body}
+CreateIssueIntentOneshot Make a new issue titled {this is a very super duper long title|title} with body {this is a very super duper long body|body}
+
+LastNotificationsIntent my last notification
+LastNotificationsIntent Get last notification
+LastNotificationsIntent Last notification
+LastNotificationsIntent Read last notification
+LastNotificationsIntent What is my last notification
+LastNotificationsIntent Tell me my last notification
+
+ThanksIntent Thank you
+ThanksIntent Thank you Alexa
+
+ExitIntent Goodbye
+ExitIntent Cancel
 ExitIntent Exit
 ExitIntent Exit Echo Code
 ExitIntent Quit
