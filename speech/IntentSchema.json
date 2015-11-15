@@ -10,17 +10,30 @@
       ]
     },
     {
-      "intent": "BranchesIntent",
-      "slots": []
+      "intent": "BranchesIntent"
     },
 	{
       "intent": "LatestCommitIntent"
 	},
     {
-      "intent": "HelpIntent",
+      "intent": "HelpIntent"
     },
 	{
-      "intent": "ExitIntent",
+      "intent": "GetIssue",
+      "slots": [
+        {
+          "name": "number",
+          "type": "NUMBER"
+        }]
+    },
+	{
+	  "intent": "RepoLanguagesIntent"
+	},
+	{
+	  "intent": "RepoContributorsIntent"
+	},
+	{
+      "intent": "ExitIntent"
     }
   ]
 }
