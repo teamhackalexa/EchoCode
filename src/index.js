@@ -63,6 +63,7 @@ HelloWorld.prototype.eventHandlers.onSessionEnded = function (sessionEndedReques
 
 HelloWorld.prototype.intentHandlers = {
     // register custom intent handlers
+<<<<<<< HEAD
 
     "SetCurrentRepo": function (intent, session, response) {
         handleSetCurrentRepo(session, response);
@@ -141,16 +142,13 @@ HelloWorld.prototype.intentHandlers = {
     },
      
     "AMAZON.HelpIntent": function (intent, session, response) {
-        response.ask("You can say hello to me!", "You can say hello to me!");
-    }
-    "AMAZON.StopIntent": function (intent, session, response) {
-        var speechOutput = "Goodbye";
-        response.tell(speechOutput);
+=======
+    HelloWorldIntent: function (intent, session, response) {
+        response.tellWithCard("Hello World!", "Greeter", "Hello World!");
     },
-
-    "AMAZON.CancelIntent": function (intent, session, response) {
-        var speechOutput = "Goodbye";
-        response.tell(speechOutput);
+    HelpIntent: function (intent, session, response) {
+>>>>>>> origin/master
+        response.ask("You can say hello to me!", "You can say hello to me!");
     }
 };
 
