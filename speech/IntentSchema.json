@@ -202,19 +202,3 @@
     }
   ]
 }
-{
-  "intents": [
-    {
-      "intent": "EchoCodeCommitIntent"
-    },
-    {
-      "intent": "AMAZON.HelpIntent"
-    },
-    {
-      "intent": "AMAZON.StopIntent"
-    },
-    {
-      "intent": "AMAZON.CancelIntent"
-    }
-  ]
-}
