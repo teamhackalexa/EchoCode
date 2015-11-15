@@ -1,0 +1,7 @@
+master
+wip
+dev
+feature
+test
+bug
+junk

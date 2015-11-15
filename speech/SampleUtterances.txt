@@ -87,8 +87,11 @@ MakeBranch Make a new branch named {branch} at {commit}
 MakeBranch Make a new branch called {branch} at {commit}
 
 DeleteRepo Delete repo {repo}
+DeleteRepo Delete {repo}
 DeleteRepo Erase repo {repo}
+DeleteRepo Erase {repo}
 DeleteRepo Nuke repo {repo}
+DeleteRepo Nuke {repo}
 
 UpdateDefaultBranch Change default branch of {repo} to {branch}
 UpdateDefaultBranch Change the default branch of {repo} to {branch}
@@ -102,8 +105,12 @@ UpdateRepoName Change name of repo {repo} to {newname}
 UpdateCurrentRepoName Change the name of this repo to {newname}
 UpdateCurrentRepoName Change name of this repo to {newname}
 
-UpdateDescription Change the description of repo {repo} to {description}
-UpdateDescription Change description of repo {repo} to {description}
+UpdateDescription Change the description of repo {repo} to {none|description}
+UpdateDescription Change the description of repo {repo} to {this is a very long description so that alexa actually picks a long description up|description}
+UpdateDescription Change description of repo {repo} to {none|description}
+UpdateDescription Change description of repo {repo} to {this is a very long description so that alexa actually picks a long description up|description}
 
-UpdateCurrentDescription Change the description of this repo to {description}
-UpdateCurrentDescription Change description of this repo to {description}
+UpdateCurrentDescription Change the description of this repo to {none|description}
+UpdateCurrentDescription Change the description of this repo to {this is a very long description so that alexa actually picks a long description up|description}
+UpdateCurrentDescription Change description of this repo to {none|description}
+UpdateCurrentDescription Change description of this repo to {this is a very long description so that alexa actually picks a long description up|description}

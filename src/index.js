@@ -63,13 +63,6 @@ HelloWorld.prototype.eventHandlers.onSessionEnded = function (sessionEndedReques
 
 HelloWorld.prototype.intentHandlers = {
     // register custom intent handlers
-<<<<<<< HEAD
-    "EchoCodeCommitIntent": function (intent, session, response) {
-=======
-    HelloWorldIntent: function (intent, session, response) {
->>>>>>> origin/master
-        response.tellWithCard("Hello World!", "Greeter", "Hello World!");
-    },
     "SetCurrentRepo": function (intent, session, response) {
         handleSetCurrentRepo(session, response);
     },

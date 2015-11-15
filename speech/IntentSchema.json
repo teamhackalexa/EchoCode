@@ -5,7 +5,7 @@
       "slots": [
         {
           "name": "repo",
-          "type": "string"
+          "type": "LIST_OF_REPOS"
         }
       ]
     },
@@ -23,7 +23,7 @@
       "slots": [
         {
           "name": "repo",
-          "type": "string"
+          "type": "LIST_OF_REPOS"
         }
       ]
     },
@@ -32,7 +32,7 @@
       "slots": [
         {
           "name": "repo",
-          "type": "string"
+          "type": "LIST_OF_REPOS"
         }
       ]
     },
@@ -41,7 +41,7 @@
       "slots": [
         {
           "name": "repo",
-          "type": "string"
+          "type": "LIST_OF_REPOS"
         }
       ]
     },
@@ -50,7 +50,7 @@
       "slots": [
         {
           "name": "repo",
-          "type": "string"
+          "type": "LIST_OF_REPOS"
         }
       ]
     },
@@ -59,7 +59,7 @@
       "slots": [
         {
           "name": "repo",
-          "type": "string"
+          "type": "LIST_OF_REPOS"
         }
       ]
     },
@@ -86,11 +86,11 @@
       "slots": [
         {
           "name": "branch",
-          "type": "string"
+          "type": "LIST_OF_BRANCHES"
         },
         {
           "name": "repo",
-          "type": "string"
+          "type": "LIST_OF_REPOS"
         }
       ]
     },
@@ -99,7 +99,7 @@
       "slots": [
         {
           "name": "repo",
-          "type": "string"
+          "type": "LIST_OF_REPOS"
         }
       ]
     },
@@ -108,11 +108,11 @@
       "slots": [
         {
           "name": "branch",
-          "type": "string"
+          "type": "LIST_OF_BRANCHES"
         },
         {
           "name": "commit",
-          "type": "string"
+          "type": "LIST_OF_REPOS" //TODO: Figure out commit handling
         }
       ]
     },
@@ -121,7 +121,7 @@
       "slots": [
         {
           "name": "repo",
-          "type": "string"
+          "type": "LIST_OF_REPOS"
         }
       ]
     },
@@ -130,11 +130,11 @@
       "slots": [
         {
           "name": "repo",
-          "type": "string"
+          "type": "LIST_OF_REPOS"
         },
         {
           "name": "branch",
-          "type": "string"
+          "type": "LIST_OF_BRANCHES"
         }
       ]
     },
@@ -143,7 +143,7 @@
       "slots": [
         {
           "name": "branch",
-          "type": "string"
+          "type": "LIST_OF_BRANCHES"
         }
       ]
     },
@@ -152,11 +152,11 @@
       "slots": [
         {
           "name": "repo",
-          "type": "string"
+          "type": "LIST_OF_REPOS"
         },
         {
           "name": "newname",
-          "type": "string"
+          "type": "LIST_OF_REPOS"
         }
       ]
     },
@@ -165,7 +165,7 @@
       "slots": [
         {
           "name": "newname",
-          "type": "string"
+          "type": "LIST_OF_REPOS"
         }
       ]
     },
@@ -174,11 +174,11 @@
       "slots": [
         {
           "name": "repo",
-          "type": "string"
+          "type": "LIST_OF_REPOS"
         },
         {
           "name": "description",
-          "type": "string"
+          "type": "AMAZON.LITERAL"
         }
       ]
     },
@@ -187,7 +187,7 @@
       "slots": [
         {
           "name": "description",
-          "type": "string"
+          "type": "AMAZON.LITERAL"
         }
       ]
     },
