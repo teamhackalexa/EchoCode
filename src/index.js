@@ -103,14 +103,11 @@ HelloWorld.prototype.intentHandlers = {
      "GetCurrentRepoCreator": function (intent, session, response) {
         handleGetCurrentRepoCreator(session, response);
     },
-    },
      "GetCurrentRepoCreation": function (intent, session, response) {
         handleGetCurrentRepoCreation(session, response);
     },
-    },
      "GetCurrentRepoDefault": function (intent, session, response) {
         handleGetCurrentRepoDefault(session, response);
-    },
     },
      "GetCurrentRepoLastMod": function (intent, session, response) {
         handleGetCurrentRepoLastMod(session, response);
