@@ -1,13 +1,13 @@
-var github = require('octonode');
-var secrets = require('./secrets');
-var alexaDateUtil = require('./alexaDateUtil');
+var github = require('octonode'); //Octonode API
+var secrets = require('./secrets'); //Users should have a secrets.js file
+var alexaDateUtil = require('./alexaDateUtil'); //Dates for Alexa
 
 var client = github.client(secrets.API_KEY);
 var ghme = client.me();
 var ghrepo = client.repo('teamhackalexa/EchoCode');
 
-var username = 'teamhackalexa';
-var repository = 'EchoCode';
+var username = 'teamhackalexa'; //Current username
+var repository = 'EchoCode'; //Current Repo
 
 /**
  * App ID for the skill
@@ -53,6 +53,7 @@ EchoCode.prototype.intentHandlers = {
         response.tell(output);
     },
 
+    //Get all branch names for this Repo "Get branches"
     BranchesIntent: function (intent, session, response) {
         function callback(err, body, header) {
             var num = Object.keys(body).length
@@ -67,7 +68,7 @@ EchoCode.prototype.intentHandlers = {
         };
         ghrepo.branches(callback);
     },
-
+    //Get the author and message from the latest commit for the repo
     LatestCommitIntent: function (intent, session, response) {
        function callback(err, body, header) {
            // console.log(JSON.stringify(body[body.length - 1]));
@@ -80,8 +81,8 @@ EchoCode.prototype.intentHandlers = {
        };
        ghrepo.commits(callback);
    },
-
-    GetIssue: function(intent, session, response) {
+   //Get any number issue's author, title, and body
+    GetIssueIntent: function(intent, session, response) {
       var issueNumber = intent.slots.number.value;
       console.log("GetIssueFunction Username: " + username);
       console.log("GetIssueFunction Repo: " + repository);
@@ -95,7 +96,7 @@ EchoCode.prototype.intentHandlers = {
       };
       ghissue.info(callback);
     },
-
+    //Get repo's contained languages
     RepoLanguagesIntent: function (intent, session, response) {
         function callback(err, body, header) {
             var keys = Object.keys(body);
@@ -114,7 +115,7 @@ EchoCode.prototype.intentHandlers = {
         };
         ghrepo.languages(callback);
     },
-
+    //Get repo contributers
     RepoContributorsIntent: function (intent, session, response) {
         function callback(err, body, header) {
             if( body.length <= 1){
@@ -132,7 +133,7 @@ EchoCode.prototype.intentHandlers = {
         };
         ghrepo.contributors(callback);
     },
-
+    //Create a new issue with any title and optional body for the current repo
     CreateIssueIntentOneshot: function(intent, session, response) {
         var speechOutput, repromptText;
         function callback(err, body, header) {
@@ -155,7 +156,7 @@ EchoCode.prototype.intentHandlers = {
             }, callback);
         }
     },
-
+    //Get content of last notification
     LastNotificationsIntent: function(intent, session, response) {
       function callback(err, body, header){
         var output;

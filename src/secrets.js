@@ -1,0 +1,2 @@
+var API_KEY = "SAMPLE API_KEY";
+exports.API_KEY = API_KEY;

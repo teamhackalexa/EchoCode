@@ -19,7 +19,7 @@
       "intent": "HelpIntent"
     },
 	{
-      "intent": "GetIssue",
+      "intent": "GetIssueIntent",
       "slots": [
         {
           "name": "number",

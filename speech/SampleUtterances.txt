@@ -14,13 +14,14 @@ LatestCommitIntent Get the most recent commit
 LatestCommitIntent What is the latest commit
 LatestCommitIntent What is the most recent commit
 LatestCommitIntent What was the latest commit
+LatestCommitIntent What was the last commit
 LatestCommitIntent What was the most recent commit
 
-GetIssue get issue {number|number}
-GetIssue get issue number {number|number}
-GetIssue what is issue {number|number}
-GetIssue what is issue number {number|number}
-GetIssue what issue is number {number|number}
+GetIssueIntent get issue {number|number}
+GetIssueIntent get issue number {number|number}
+GetIssueIntent what is issue {number|number}
+GetIssueIntent what is issue number {number|number}
+GetIssueIntent what issue is number {number|number}
 
 RepoLanguagesIntent Get language
 RepoLanguagesIntent Get languages
@@ -50,13 +51,20 @@ CreateIssueIntentOneshot Make a new issue titled {this is a very super duper lon
 CreateIssueIntentOneshot Make a new issue titled {title|title} with body {this is a super duper long body|body}
 CreateIssueIntentOneshot Make a new issue titled {this is a very super duper long title|title} with body {this is a very super duper long body|body}
 
-LastNotificationsIntent my last notification
+LastNotificationsIntent read my last notification
 LastNotificationsIntent Get last notification
 LastNotificationsIntent Get my last notification
 LastNotificationsIntent Last notification
 LastNotificationsIntent Read last notification
 LastNotificationsIntent What is my last notification
 LastNotificationsIntent Tell me my last notification
+LastNotificationsIntent read my latest notification
+LastNotificationsIntent Get latest notification
+LastNotificationsIntent Get my latest notification
+LastNotificationsIntent latest notification
+LastNotificationsIntent Read latest notification
+LastNotificationsIntent What is my latest notification
+LastNotificationsIntent Tell me my latest notification
 
 ThanksIntent Thank you
 ThanksIntent Thank you Alexa
