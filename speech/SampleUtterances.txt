@@ -2,13 +2,19 @@ TestIntent repeat {blank|testslot}
 
 BranchesIntent List branches
 BranchesIntent List the branches
+BranchesIntent Give me the branches
 BranchesIntent What are the branches
 
 LatestCommitIntent Latest commit
+LatestCommitIntent Most recent commit
 LatestCommitIntent Get latest commit
+LatestCommitIntent Get most recent commit
 LatestCommitIntent Get the latest commit
+LatestCommitIntent Get the most recent commit
 LatestCommitIntent What is the latest commit
+LatestCommitIntent What is the most recent commit
 LatestCommitIntent What was the latest commit
+LatestCommitIntent What was the most recent commit
 
 GetIssue get issue {number|number}
 GetIssue get issue number {number|number}
@@ -46,6 +52,7 @@ CreateIssueIntentOneshot Make a new issue titled {this is a very super duper lon
 
 LastNotificationsIntent my last notification
 LastNotificationsIntent Get last notification
+LastNotificationsIntent Get my last notification
 LastNotificationsIntent Last notification
 LastNotificationsIntent Read last notification
 LastNotificationsIntent What is my last notification
